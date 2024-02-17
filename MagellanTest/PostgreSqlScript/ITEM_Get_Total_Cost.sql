@@ -10,7 +10,7 @@ as $$
       FROM 
         item 
       WHERE 
-        $1 = any(item_name)
+        $1 = any(item_name) AND parent_item IS NULL
       UNION 
       SELECT 
         i.id,
@@ -20,6 +20,6 @@ as $$
       FROM 
         item i 
         INNER JOIN subitem s ON s.id = i.parent_item
-    ) 
+    ) 	
     SELECT SUM(cost) FROM subitem;
 $$;
