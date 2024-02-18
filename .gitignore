@@ -1,0 +1,6 @@
+
+MagellanTest/db_credentials.txt
+.vs/MagellanTest/
+MagellanTest/bin/
+MagellanTest/obj/
+*.bin
